@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetaFrm.Database.MSSQL(net6.0)", "MetaFrm.Database.MSSQL(net6.0)\MetaFrm.Database.MSSQL(net6.0).csproj", "{F8D7FCFA-FD83-454E-B7A5-3B70114280A8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B8C1F910-EC75-400F-97BF-3C71FD627EF8}"
+	ProjectSection(SolutionItems) = preProject
+		src\MSSQL.cs = src\MSSQL.cs
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{2822DE9A-BA4C-43CF-8E58-B6E301FCC80A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{EEAABC31-E2F0-43E5-A356-79DD16ED2D2A}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\build.yml = .github\workflows\build.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "솔루션 항목", "솔루션 항목", "{B1C47619-0881-4231-8B74-B64BEE8A0840}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F8D7FCFA-FD83-454E-B7A5-3B70114280A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8D7FCFA-FD83-454E-B7A5-3B70114280A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8D7FCFA-FD83-454E-B7A5-3B70114280A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8D7FCFA-FD83-454E-B7A5-3B70114280A8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EEAABC31-E2F0-43E5-A356-79DD16ED2D2A} = {2822DE9A-BA4C-43CF-8E58-B6E301FCC80A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {54200B6E-61F3-48EA-9133-9CBD96AB7B8B}
+	EndGlobalSection
+EndGlobal
