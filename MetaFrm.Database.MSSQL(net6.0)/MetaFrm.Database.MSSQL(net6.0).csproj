@@ -8,11 +8,11 @@
     <AssemblyName>MetaFrm.Database.MSSQL</AssemblyName>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <PackageId>MetaFrm.Database.MSSQL.net6.0</PackageId>
-    <Version>6.0.0</Version>
+    <Version>6.0.0.1</Version>
     <Company>Meta Framework</Company>
     <Copyright>Copyright 2022. dsun all rights reserved.</Copyright>
-    <PackageProjectUrl>https://github.com/dsuny/MetaFrm.Database.MSSQL</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/dsuny/MetaFrm.Database.MSSQL</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/MetaFrm/MetaFrm.Database.MSSQL</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/MetaFrm/MetaFrm.Database.MSSQL</RepositoryUrl>
     <PackageTags>meta;framework;dotnet;maui;</PackageTags>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Authors>dsun</Authors>
@@ -40,7 +40,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MetaFrm.Core.net6.0" Version="6.0.0" />
+    <PackageReference Include="MetaFrm.Core.net6.0" Version="6.0.0.4" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
   </ItemGroup>
 
