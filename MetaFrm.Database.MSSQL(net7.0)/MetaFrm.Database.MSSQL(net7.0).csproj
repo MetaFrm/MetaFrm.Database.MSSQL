@@ -1,5 +1,4 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <RootNamespace>MetaFrm.Database</RootNamespace>
@@ -8,7 +7,7 @@
     <AssemblyName>MetaFrm.Database.MSSQL</AssemblyName>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <PackageId>MetaFrm.Database.MSSQL.net7.0</PackageId>
-    <Version>7.0.0.12</Version>
+    <Version>7.0.0.16</Version>
     <Company>Meta Framework</Company>
     <Copyright>Copyright 2023. dsun all rights reserved.</Copyright>
     <PackageProjectUrl>https://github.com/MetaFrm/MetaFrm.Database.MSSQL</PackageProjectUrl>
@@ -16,39 +15,28 @@
     <PackageTags>meta;framework;dotnet;maui;</PackageTags>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Authors>dsun</Authors>
-	
-	<SourceRevisionId>build$([System.DateTime]::UtcNow.ToString("yyyy-MM-ddTHH:mm:ss:fffZ"))</SourceRevisionId>
-	
-	<ApplicationIcon>icon.ico</ApplicationIcon>
-	
-	<Title>Meta Framework Database MSSQL</Title>
-	
-	<Product>Meta Framework Database MSSQL</Product>
-	
-	<Description>Meta Framework
+    <SourceRevisionId>build$([System.DateTime]::UtcNow.ToString("yyyy-MM-ddTHH:mm:ss:fffZ"))</SourceRevisionId>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <Title>Meta Framework Database MSSQL</Title>
+    <Product>Meta Framework Database MSSQL</Product>
+    <Description>Meta Framework
 (Multi platform &amp; Meta management)</Description>
-	
-	<PackageIcon>icon.png</PackageIcon>
+    <PackageIcon>icon.png</PackageIcon>
   </PropertyGroup>
-
   <ItemGroup>
     <Compile Include="..\src\MSSQL.cs" Link="MSSQL.cs" />
   </ItemGroup>
-
   <ItemGroup>
     <Content Include="icon.ico" />
   </ItemGroup>
-
   <ItemGroup>
-    <PackageReference Include="MetaFrm.Core.net7.0" Version="7.0.0.12" />
+    <PackageReference Include="MetaFrm.Core.net7.0" Version="7.0.0.16" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
   </ItemGroup>
-
   <ItemGroup>
     <None Update="icon.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
-
 </Project>
