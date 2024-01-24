@@ -7,9 +7,9 @@
     <AssemblyName>MetaFrm.Database.MSSQL</AssemblyName>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <PackageId>MetaFrm.Database.MSSQL.net7.0</PackageId>
-    <Version>7.0.1.12</Version>
+    <Version>7.0.1.13</Version>
     <Company>Meta Framework</Company>
-    <Copyright>Copyright 2023. dsun all rights reserved.</Copyright>
+    <Copyright>Copyright 2024. dsun all rights reserved.</Copyright>
     <PackageProjectUrl>https://github.com/MetaFrm/MetaFrm.Database.MSSQL</PackageProjectUrl>
     <RepositoryUrl>https://github.com/MetaFrm/MetaFrm.Database.MSSQL</RepositoryUrl>
     <PackageTags>meta;framework;dotnet;maui;</PackageTags>
@@ -30,8 +30,8 @@
     <Content Include="icon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="MetaFrm.Core.net7.0" Version="7.0.1.12" />
-    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+    <PackageReference Include="MetaFrm.Core.net7.0" Version="7.0.1.13" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
   </ItemGroup>
   <ItemGroup>
     <None Update="icon.png">
