@@ -1,5 +1,5 @@
 ﻿using System.Data.Common;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 
 namespace MetaFrm.Database
 {
@@ -120,15 +120,8 @@ namespace MetaFrm.Database
                 this.sqlDataAdapter.SelectCommand.Connection.Dispose();
             }
 
-            if (this.sqlDataAdapter.SelectCommand != null)
-            {
-                this.sqlDataAdapter.SelectCommand.Dispose();
-            }
-
-            if (this.sqlDataAdapter != null)
-            {
-                this.sqlDataAdapter.Dispose();
-            }
+            this.sqlDataAdapter.SelectCommand?.Dispose();
+            this.sqlDataAdapter?.Dispose();
         }
     }
 }
