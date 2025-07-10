@@ -7,7 +7,7 @@
     <AssemblyName>MetaFrm.Database.MSSQL</AssemblyName>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <PackageId>MetaFrm.Database.MSSQL.net9.0</PackageId>
-    <Version>9.0.4.43</Version>
+    <Version>9.0.4.50</Version>
     <Company>Meta Framework</Company>
     <Copyright>Copyright 2025. dsun all rights reserved.</Copyright>
     <PackageProjectUrl>https://github.com/MetaFrm/MetaFrm.Database.MSSQL</PackageProjectUrl>
@@ -22,7 +22,11 @@
     <Description>Meta Framework
 (Multi platform &amp; Meta management)</Description>
     <PackageIcon>icon.png</PackageIcon>
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
   </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\readme.md" Pack="true" PackagePath="\"/>
+  </ItemGroup>
   <ItemGroup>
     <Compile Include="..\src\MSSQL.cs" Link="MSSQL.cs" />
   </ItemGroup>
@@ -30,7 +34,7 @@
     <Content Include="icon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="MetaFrm.Core.net9.0" Version="9.0.4.43" />
+    <PackageReference Include="MetaFrm.Core.net9.0" Version="9.0.4.50" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="6.0.2" />
   </ItemGroup>
   <ItemGroup>
