@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.0.11205.157 d18.0
+VisualStudioVersion = 18.0.11205.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B8C1F910-EC75-400F-97BF-3C71FD627EF8}"
 	ProjectSection(SolutionItems) = preProject
@@ -13,8 +13,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{EEAABC31-E2F0-43E5-A356-79DD16ED2D2A}"
 	ProjectSection(SolutionItems) = preProject
 		.github\workflows\build_10.0.yml = .github\workflows\build_10.0.yml
-		.github\workflows\build_8.0.yml = .github\workflows\build_8.0.yml
-		.github\workflows\build_9.0.yml = .github\workflows\build_9.0.yml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "솔루션 항목", "솔루션 항목", "{B1C47619-0881-4231-8B74-B64BEE8A0840}"
@@ -24,10 +22,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "솔루션 항목", "솔루�
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetaFrm.Database.MSSQL(net8.0)", "MetaFrm.Database.MSSQL(net8.0)\MetaFrm.Database.MSSQL(net8.0).csproj", "{D935A7A4-A7C4-49CF-A255-EFC143AC1C5C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetaFrm.Database.MSSQL(net9.0)", "MetaFrm.Database.MSSQL(net9.0)\MetaFrm.Database.MSSQL(net9.0).csproj", "{9E00221F-BB3F-40BE-8EE8-963FAAA82F69}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetaFrm.Database.MSSQL(net10.0)", "MetaFrm.Database.MSSQL(net10.0)\MetaFrm.Database.MSSQL(net10.0).csproj", "{2CF78D0E-D874-E828-1D0D-A4BFEF2D065C}"
 EndProject
 Global
@@ -36,14 +30,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D935A7A4-A7C4-49CF-A255-EFC143AC1C5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D935A7A4-A7C4-49CF-A255-EFC143AC1C5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D935A7A4-A7C4-49CF-A255-EFC143AC1C5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D935A7A4-A7C4-49CF-A255-EFC143AC1C5C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9E00221F-BB3F-40BE-8EE8-963FAAA82F69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9E00221F-BB3F-40BE-8EE8-963FAAA82F69}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9E00221F-BB3F-40BE-8EE8-963FAAA82F69}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9E00221F-BB3F-40BE-8EE8-963FAAA82F69}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2CF78D0E-D874-E828-1D0D-A4BFEF2D065C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2CF78D0E-D874-E828-1D0D-A4BFEF2D065C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CF78D0E-D874-E828-1D0D-A4BFEF2D065C}.Release|Any CPU.ActiveCfg = Release|Any CPU
