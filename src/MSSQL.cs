@@ -1,5 +1,6 @@
-﻿using System.Data.Common;
-using Microsoft.Data.SqlClient;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Logging;
+using System.Data.Common;
 
 namespace MetaFrm.Database
 {
@@ -26,14 +27,10 @@ namespace MetaFrm.Database
 
         DbParameter IDatabase.AddParameter(string parameterName, DbType dbType, int size)
         {
-            SqlCommand sqlCommand;
-
-            sqlCommand = this.sqlDataAdapter.SelectCommand;
-
             if (size == 0)
-                return sqlCommand.Parameters.Add(parameterName, DbTypeConvert(dbType));
+                return this.sqlDataAdapter.SelectCommand.Parameters.Add(parameterName, DbTypeConvert(dbType));
             else
-                return sqlCommand.Parameters.Add(parameterName, DbTypeConvert(dbType), size);
+                return this.sqlDataAdapter.SelectCommand.Parameters.Add(parameterName, DbTypeConvert(dbType), size);
         }
 
         static System.Data.SqlDbType DbTypeConvert(DbType dbType)
@@ -44,10 +41,7 @@ namespace MetaFrm.Database
                 DbType.Binary => System.Data.SqlDbType.Binary,
                 DbType.Bit => System.Data.SqlDbType.Bit,
                 DbType.Char => System.Data.SqlDbType.Char,
-                DbType.Date => System.Data.SqlDbType.Date,
                 DbType.DateTime => System.Data.SqlDbType.DateTime,
-                DbType.DateTime2 => System.Data.SqlDbType.DateTime2,
-                DbType.DateTimeOffset => System.Data.SqlDbType.DateTimeOffset,
                 DbType.Decimal => System.Data.SqlDbType.Decimal,
                 DbType.Float => System.Data.SqlDbType.Float,
                 DbType.Image => System.Data.SqlDbType.Image,
@@ -57,55 +51,38 @@ namespace MetaFrm.Database
                 DbType.NText => System.Data.SqlDbType.NText,
                 DbType.NVarChar => System.Data.SqlDbType.NVarChar,
                 DbType.Real => System.Data.SqlDbType.Real,
+                DbType.UniqueIdentifier => System.Data.SqlDbType.UniqueIdentifier,
                 DbType.SmallDateTime => System.Data.SqlDbType.SmallDateTime,
                 DbType.SmallInt => System.Data.SqlDbType.SmallInt,
                 DbType.SmallMoney => System.Data.SqlDbType.SmallMoney,
-                DbType.Structured => System.Data.SqlDbType.Structured,
                 DbType.Text => System.Data.SqlDbType.Text,
-                DbType.Time => System.Data.SqlDbType.Time,
                 DbType.Timestamp => System.Data.SqlDbType.Timestamp,
                 DbType.TinyInt => System.Data.SqlDbType.TinyInt,
-                DbType.Udt => System.Data.SqlDbType.Udt,
-                DbType.UniqueIdentifier => System.Data.SqlDbType.UniqueIdentifier,
                 DbType.VarBinary => System.Data.SqlDbType.VarBinary,
                 DbType.VarChar => System.Data.SqlDbType.VarChar,
                 DbType.Variant => System.Data.SqlDbType.Variant,
                 DbType.Xml => System.Data.SqlDbType.Xml,
-                _ => System.Data.SqlDbType.Variant,
+                DbType.Udt => System.Data.SqlDbType.Udt,
+                DbType.Structured => System.Data.SqlDbType.Structured,
+                DbType.Date => System.Data.SqlDbType.Date,
+                DbType.Time => System.Data.SqlDbType.Time,
+                DbType.DateTime2 => System.Data.SqlDbType.DateTime2,
+                DbType.DateTimeOffset => System.Data.SqlDbType.DateTimeOffset,
+
+                //DbType.Json => System.Data.SqlDbType.Json,
+                //DbType.Vector => System.Data.SqlDbType.Vector,
+
+                _ => throw new ArgumentOutOfRangeException(nameof(dbType), $"지원하지 않는 DbType입니다: {dbType}"),
             };
         }
 
-        DbCommand IDatabase.Command
-        {
-            get
-            {
-                return this.sqlDataAdapter.SelectCommand;
-            }
-        }
+        DbCommand IDatabase.Command => this.sqlDataAdapter.SelectCommand;
 
-        DbConnection IDatabase.Connection
-        {
-            get
-            {
-                return this.sqlDataAdapter.SelectCommand.Connection;
-            }
-        }
+        DbConnection IDatabase.Connection => this.sqlDataAdapter.SelectCommand.Connection;
 
-        DbDataAdapter IDatabase.DataAdapter
-        {
-            get
-            {
-                return this.sqlDataAdapter;
-            }
-        }
+        DbDataAdapter IDatabase.DataAdapter => this.sqlDataAdapter;
 
-        DbTransaction IDatabase.Transaction
-        {
-            get
-            {
-                return this.sqlDataAdapter.SelectCommand.Transaction;
-            }
-        }
+        DbTransaction IDatabase.Transaction => this.sqlDataAdapter.SelectCommand.Transaction;
 
         void IDatabase.DeriveParameters()
         {
@@ -114,14 +91,19 @@ namespace MetaFrm.Database
 
         void IDatabase.Close()
         {
-            if (this.sqlDataAdapter.SelectCommand.Connection != null)
+            try
             {
-                this.sqlDataAdapter.SelectCommand.Connection.Close();
-                this.sqlDataAdapter.SelectCommand.Connection.Dispose();
+                if (this.sqlDataAdapter.SelectCommand.Connection.State != System.Data.ConnectionState.Closed)
+                    this.sqlDataAdapter.SelectCommand.Connection.Close();
             }
-
-            this.sqlDataAdapter.SelectCommand?.Dispose();
-            this.sqlDataAdapter?.Dispose();
+            catch (Exception ex)
+            {
+                if (Factory.Logger.IsEnabled(LogLevel.Error))
+                    Factory.Logger.LogError(ex, "An error occurred while closing the database.");
+            }
+            this.sqlDataAdapter.SelectCommand.Connection.Dispose();
+            this.sqlDataAdapter.SelectCommand.Dispose();
+            this.sqlDataAdapter.Dispose();
         }
     }
 }
