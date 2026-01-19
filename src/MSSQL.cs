@@ -68,9 +68,8 @@ namespace MetaFrm.Database
                 DbType.Time => System.Data.SqlDbType.Time,
                 DbType.DateTime2 => System.Data.SqlDbType.DateTime2,
                 DbType.DateTimeOffset => System.Data.SqlDbType.DateTimeOffset,
-
-                //DbType.Json => System.Data.SqlDbType.Json,
-                //DbType.Vector => System.Data.SqlDbType.Vector,
+                DbType.Json => System.Data.SqlDbType.Json,
+                DbType.Vector => System.Data.SqlDbType.Vector,
 
                 _ => throw new ArgumentOutOfRangeException(nameof(dbType), $"지원하지 않는 DbType입니다: {dbType}"),
             };
