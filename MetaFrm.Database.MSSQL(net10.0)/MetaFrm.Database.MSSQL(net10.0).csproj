@@ -7,7 +7,7 @@
     <AssemblyName>MetaFrm.Database.MSSQL</AssemblyName>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <PackageId>MetaFrm.Database.MSSQL.net10.0</PackageId>
-    <Version>10.0.1.8</Version>
+    <Version>10.0.1.12</Version>
     <Company>Meta Framework</Company>
     <Copyright>Copyright 2026. dsun all rights reserved.</Copyright>
     <PackageProjectUrl>https://github.com/MetaFrm/MetaFrm.Database.MSSQL</PackageProjectUrl>
@@ -34,7 +34,7 @@
     <Content Include="icon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="MetaFrm.Core.net10.0" Version="10.0.1.8" />
+    <PackageReference Include="MetaFrm.Core.net10.0" Version="10.0.1.12" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="6.1.4" />
   </ItemGroup>
   <ItemGroup>
