@@ -1,5 +1,4 @@
 ﻿using Microsoft.Data.SqlClient;
-using Microsoft.Extensions.Logging;
 using System.Data.Common;
 
 namespace MetaFrm.Database
@@ -97,8 +96,7 @@ namespace MetaFrm.Database
             }
             catch (Exception ex)
             {
-                if (Factory.Logger.IsEnabled(LogLevel.Error))
-                    Factory.Logger.LogError(ex, "An error occurred while closing the database.");
+                Factory.Logger.Error(ex, "An error occurred while closing the database.");
             }
             this.sqlDataAdapter.SelectCommand.Connection.Dispose();
             this.sqlDataAdapter.SelectCommand.Dispose();
