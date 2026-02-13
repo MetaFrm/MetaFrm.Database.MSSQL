@@ -6,22 +6,22 @@
     <Nullable>enable</Nullable>
     <AssemblyName>MetaFrm.Database.MSSQL</AssemblyName>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageId>MetaFrm.Database.MSSQL.net10.0</PackageId>
-    <Version>10.0.1.20</Version>
+    <Version>10.0.3.0</Version>
+    <Authors>dsun</Authors>
     <Company>Meta Framework</Company>
     <Copyright>Copyright 2026. dsun all rights reserved.</Copyright>
     <PackageProjectUrl>https://github.com/MetaFrm/MetaFrm.Database.MSSQL</PackageProjectUrl>
     <RepositoryUrl>https://github.com/MetaFrm/MetaFrm.Database.MSSQL</RepositoryUrl>
     <PackageTags>meta;framework;dotnet;maui;</PackageTags>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Authors>dsun</Authors>
     <SourceRevisionId>build$([System.DateTime]::UtcNow.ToString("yyyy-MM-ddTHH:mm:ss:fffZ"))</SourceRevisionId>
-    <ApplicationIcon>icon.ico</ApplicationIcon>
     <Title>Meta Framework Database MSSQL</Title>
-    <Product>Meta Framework Database MSSQL</Product>
     <Description>Meta Framework
 (Multi platform &amp; Meta management)</Description>
+    <Product>Meta Framework Database MSSQL</Product>
     <PackageIcon>icon.png</PackageIcon>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
     <PackageReadmeFile>readme.md</PackageReadmeFile>
   </PropertyGroup>
   <ItemGroup>
@@ -34,7 +34,7 @@
     <Content Include="icon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="MetaFrm.Core.net10.0" Version="10.0.1.20" />
+    <PackageReference Include="MetaFrm.Core.net10.0" Version="10.0.3" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="6.1.4" />
   </ItemGroup>
   <ItemGroup>
